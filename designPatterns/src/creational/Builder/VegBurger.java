@@ -3,18 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package designpatterns;
+package creational.Builder;
 
 /**
  *
  * @author Adam
  */
-public class Main {
+public class VegBurger extends Burger {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        ChoosePatterns choosePatterns = new ChoosePatterns();
+    @Override
+    public float price() {
+        return 25.0f;
     }
+
+    @Override
+    public String name() {
+        return "Veg Burger";
+    }  
 }

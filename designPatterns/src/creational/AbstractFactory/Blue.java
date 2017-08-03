@@ -3,18 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package designpatterns;
+package creational.AbstractFactory;
 
 /**
  *
  * @author Adam
  */
-public class Main {
+public class Blue implements Color {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        ChoosePatterns choosePatterns = new ChoosePatterns();
+    @Override
+    public void fill() {
+        System.out.println("Inside Blue::fill() method!");
     }
 }
