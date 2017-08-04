@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package structural;
+package behavioral;
 
 import java.util.Scanner;
 
@@ -13,13 +13,14 @@ import java.util.Scanner;
  */
 public abstract class ConcretePatterns {
 
-    public Structural structural;
+    public Behavioral behavioral;
 
     public abstract void help();
 
-    public void setStructural(Structural structural) {
-        this.structural = structural;
+    public void setBehavioral(Behavioral behavioral) {
+        this.behavioral = behavioral;
     }
 
     public abstract void chooseConcretePatterns(Scanner reader);
+
 }

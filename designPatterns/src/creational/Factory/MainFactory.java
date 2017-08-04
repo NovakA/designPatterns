@@ -46,7 +46,7 @@ public class MainFactory extends ConcretePatterns {
     @Override
     public void help() {
         System.out.println("b - back to creational menu\n"
-                + "c/r/s - circle/rectangle/square object"
+                + "c/r/s - circle/rectangle/square object\n"
                 + "h - help");
     }
 }

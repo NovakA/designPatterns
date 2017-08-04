@@ -16,13 +16,36 @@ public class MainDecorator extends ConcretePatterns {
 
     @Override
     public void help() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("b - back to structural menu\n"
+                + "h - for help\n");
     }
 
 
     @Override
     public void chooseConcretePatterns(Scanner reader) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        help();
+        Shape circle = new Circle();
+        Shape redCircle = new RedShapeDecorator(new Circle());
+        Shape redRectangle = new RedShapeDecorator(new Rectangle());
+        
+        circle.draw();
+        redCircle.draw();
+        redRectangle.draw();
+        
+        String input;
+        while (true) {
+            input = reader.next();
+            switch (input) {
+                case "b":
+                    structural.choose();
+                    break;
+                case "h":
+                    help();
+                    break;
+                default: 
+                    break;
+            }
+        }
     }
 
 }

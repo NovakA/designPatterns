@@ -14,14 +14,39 @@ import structural.ConcretePatterns;
  */
 public class MainAdapter extends ConcretePatterns {
 
+    AudioPlayer audioPlayer;
+    
     @Override
     public void help() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("b - back to structural menu\n"
+                + "h - for help\n"
+                + "name.audiotype - add new input");
     }
 
     @Override
     public void chooseConcretePatterns(Scanner reader) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        help();
+        audioPlayer = new AudioPlayer();
+        String[] parts;
+        String input;
+        while (true) {
+            input = reader.next();
+            switch (input) {
+                case "b":
+                    structural.choose();
+                    break;
+                case "h":
+                    help();
+                    break;
+                default: 
+                    try {
+                        parts = input.split("\\.");
+                        audioPlayer.play(parts[1], input);
+                    } catch (ClassCastException c) {
+                        System.out.println("Input must be in form name.type ");
+                    }
+                    break;
+            }
+        }
     }
-    
 }

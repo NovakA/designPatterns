@@ -61,7 +61,7 @@ public class Structural extends Patterns {
 
     @Override
     public void help() {
-        System.out.println(" b - back to menu\n"
+        System.out.println("b - back to menu\n"
                 + "a - adapter\n"
                 + "c - composite\n"
                 + "d - decorator\n"

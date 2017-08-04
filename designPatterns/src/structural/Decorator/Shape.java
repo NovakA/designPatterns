@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package behavioral;
+package structural.Decorator;
 
 /**
  *
  * @author Adam
  */
-public class Observer {
-    
+public interface Shape {
+    void draw();
 }

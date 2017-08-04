@@ -3,43 +3,50 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package structural.Proxy;
+package behavioral.Template;
 
+import behavioral.ConcretePatterns;
 import java.util.Scanner;
-import structural.ConcretePatterns;
 
 /**
  *
  * @author Adam
  */
-public class MainProxy extends ConcretePatterns {
-    
+public class MainTemplate extends ConcretePatterns {
+
     @Override
     public void help() {
         System.out.println("b - back to structural menu\n"
-                + "h - for help\n");
+                + "h - for help\n"
+                + "c - cricket game\n"
+                + "f - football game");
     }
-
 
     @Override
     public void chooseConcretePatterns(Scanner reader) {
         help();
-        Image image = new ProxyImage("test_10mb.jpg");
-        
-        image.display();
-        System.out.println("");
-        image.display();
+        Game game;
+
         while (true) {
             switch (reader.next()) {
                 case "b":
-                    structural.choose();
+                    behavioral.choose();
                     break;
-                case "h": 
+                case "h":
                     help();
+                    break;
+                case "c":
+                    game = new Cricket();
+                    game.play();
+                    break;
+                case "f":
+                    game = new Football();
+                    game.play();
                     break;
                 default:
                     break;
             }
         }
     }
+    
 }

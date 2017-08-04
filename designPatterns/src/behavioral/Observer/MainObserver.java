@@ -3,43 +3,47 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package structural.Proxy;
+package behavioral.Observer;
 
+import behavioral.ConcretePatterns;
 import java.util.Scanner;
-import structural.ConcretePatterns;
 
 /**
  *
  * @author Adam
  */
-public class MainProxy extends ConcretePatterns {
-    
+public class MainObserver extends ConcretePatterns {
+
     @Override
     public void help() {
         System.out.println("b - back to structural menu\n"
-                + "h - for help\n");
+                + "h - for help\n"
+                + "number - to see in binary,hexadecimal and octal format");
     }
-
 
     @Override
     public void chooseConcretePatterns(Scanner reader) {
         help();
-        Image image = new ProxyImage("test_10mb.jpg");
+        Subject subject = new Subject();
+        new HexaObserver(subject);
+        new OctalObserver(subject);
+        new BinaryObserver(subject);
         
-        image.display();
-        System.out.println("");
-        image.display();
+        String string;
         while (true) {
-            switch (reader.next()) {
+            string = reader.next();
+            switch (string) {
                 case "b":
-                    structural.choose();
+                    behavioral.choose();
                     break;
-                case "h": 
+                case "h":
                     help();
                     break;
                 default:
+                    subject.setState(Integer.valueOf(string));
                     break;
             }
         }
     }
+
 }

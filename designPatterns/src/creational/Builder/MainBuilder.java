@@ -23,8 +23,8 @@ public class MainBuilder extends ConcretePatterns {
         System.out.println("b - back to creational menu\n"
                 + "v - vegan meal\n"
                 + "n - non vegan meal\n"
-                + "c - count our order"
-                + "r - reset order"
+                + "c - count our order\n"
+                + "r - reset order\n"
                 + "h - help");
     }
 

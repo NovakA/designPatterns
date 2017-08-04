@@ -16,15 +16,37 @@ public class MainFacade extends ConcretePatterns {
 
     @Override
     public void help() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("b - back to structural menu\n"
+                + "h - for help\n"
+                + "c - circle\n"
+                + "s - square\n"
+                + "r - rectangle\n");
     }
-
-
 
     @Override
     public void chooseConcretePatterns(Scanner reader) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        help();
+        ShapeMaker shapeMaker = new ShapeMaker();
+        while (true) {
+            switch (reader.next()) {
+                case "b":
+                    structural.choose();
+                    break;
+                case "h":
+                    help();
+                    break;
+                case "c":
+                    shapeMaker.drawCircle();
+                    break;
+                case "r":
+                    shapeMaker.drawRectangle();
+                    break;
+                case "s":
+                    shapeMaker.drawSquare();
+                    break;
+                default:
+                    break;
+            }
+        }
     }
-
-
 }
